@@ -12,9 +12,12 @@ def parse_args():
     return parser.parse_args()
 
 
-def go_to_timestep(timestep: float):
+def go_to_timestep(timestep):
     from paraview.simple import GetAnimationScene
     scene = GetAnimationScene()
+    if timestep == "latest":
+        scene.GoToLast()
+        return
     scene.AnimationTime = timestep
 
 
