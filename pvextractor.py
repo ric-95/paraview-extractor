@@ -6,8 +6,8 @@ import glob
 def parse_args():
     from argparse import ArgumentParser
     parser = ArgumentParser()
-    parser.add_argument("--case-dir", "-c",
-                        help="Directory containing openfoam case")
+    parser.add_argument("--openfoam-case-dir", "-c",
+                        help="Directory containing openfoam case", default=".")
     parser.add_argument("--config-file", help="Path to configuration file.")
     parser.add_argument()
     return parser.parse_args()
@@ -134,6 +134,6 @@ def main():
     config = read_config(args.config_file)
     planes_to_extract = config.pop("planes", [])
     lines_to_extract = config.pop("lines", [])
-    openfoam_source = read_openfoam_case(args.case_dir)
+    openfoam_source = read_openfoam_case(args.openfoam_case_dir)
     extract_and_export_planes(openfoam_source, planes_to_extract)
     extract_and_export_lines(openfoam_source, lines_to_extract)
