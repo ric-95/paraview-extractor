@@ -102,6 +102,7 @@ def extract_and_export_plane(input_data, plane_definition, plane=None):
     spreadsheet_view = create_spreadsheet_view(resample_with_dataset)
     output_file = plane_definition["output"]
     export_spreadheet_view_as_csv(output_file, spreadsheet_view)
+    delete_view(spreadsheet_view)
     return plane_source
 
 
@@ -122,6 +123,7 @@ def extract_and_export_line(input_data, line_definition, line=None):
     spreadsheet_view = create_spreadsheet_view(line)
     output = line_definition["output"]
     export_spreadheet_view_as_csv(output, spreadsheet_view)
+    delete_view(spreadsheet_view)
     return line
 
 
@@ -130,6 +132,10 @@ def extract_and_export_lines(input_data, lines_to_extract):
     for line_definition in lines_to_extract:
         line = extract_and_export_line(input_data, line_definition, line)
 
+
+def delete_view(view):
+    from paraview.simple import Delete
+    Delete(view)
 
 def main():
     args = parse_args()
