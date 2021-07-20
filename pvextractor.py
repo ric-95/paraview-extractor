@@ -132,8 +132,8 @@ def extract_and_export_lines(input_data, lines_to_extract):
 def main():
     args = parse_args()
     config = read_config(args.config_file)
-    planes_to_extract = config.pop("planes")
-    lines_to_extract = config.pop("lines")
+    planes_to_extract = config.pop("planes", [])
+    lines_to_extract = config.pop("lines", [])
     openfoam_source = read_openfoam_case(args.case_dir)
     extract_and_export_planes(openfoam_source, planes_to_extract)
     extract_and_export_lines(openfoam_source, lines_to_extract)
