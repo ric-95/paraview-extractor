@@ -9,7 +9,6 @@ def parse_args():
     parser.add_argument("--openfoam-case-dir", "-c",
                         help="Directory containing openfoam case", default=".")
     parser.add_argument("--config-file", help="Path to configuration file.")
-    parser.add_argument()
     return parser.parse_args()
 
 
