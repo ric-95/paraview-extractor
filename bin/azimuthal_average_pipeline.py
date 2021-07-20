@@ -19,7 +19,7 @@ import os
 ORIGIN = (0, 0, 0)
 PI = np.pi
 VARIABLES = ("UMean", "UPrime2Mean", "pMean")
-FILE_TEMPLATE = Template("azim_average/raw/SLICE{number}.csv")
+FILE_TEMPLATE = Template("azim_average/raw/SLICE${number}.csv")
 
 
 def parse_args():
