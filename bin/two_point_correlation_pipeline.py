@@ -26,7 +26,7 @@ def parse_args():
     return parser.parse_args()
 
 
-FILE_TEMPLATE = Template("LINE${number}_T=${timestep}.csv")
+FILE_TEMPLATE = Template("two_point_corr/raw/LINE${number}_T=${timestep}.csv")
 VARIABLES = ("U", "UMean")
 PI = np.pi
 
