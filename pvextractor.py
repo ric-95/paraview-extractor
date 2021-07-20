@@ -145,3 +145,7 @@ def main():
     openfoam_source = read_openfoam_case(args.openfoam_case_dir)
     extract_and_export_planes(openfoam_source, planes_to_extract)
     extract_and_export_lines(openfoam_source, lines_to_extract)
+
+
+if __name__ == "__main__":
+    main()
